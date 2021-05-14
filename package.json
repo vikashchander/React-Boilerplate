@@ -33,10 +33,12 @@
     "rimraf": "^3.0.2"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./src/enzyme.setup.js",
+    "setupFilesAfterEnv":["./src/enzyme.setup.js"],
     "setupFiles": [
       "raf/polyfill"
-    ]
+    ],
+    "verbose": true
+
   },
   "devDependencies": {
     "@babel/core": "^7.14.2",
