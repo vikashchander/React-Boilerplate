@@ -18,6 +18,7 @@ const moduleObj = {
 };
 
 const client = {
+  mode: 'none',
   entry: { client: "./src/client/index.js" },
   target: "web",
   output: {
@@ -28,6 +29,7 @@ const client = {
   plugins: [new HtmlWebPackPlugin({ template: "src/client/index.html" })],
 };
 const server = {
+  mode: 'none',
   entry: { server: "./src/server/server.js" },
   target: "node",
   output: { filename: "[name].js", path: path.resolve(__dirname, "dist") },
