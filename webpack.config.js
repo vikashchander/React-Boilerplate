@@ -19,7 +19,7 @@ const moduleObj = {
 
 const client = {
   mode: 'none',
-  entry: { client: "./src/client/index.js" },
+  entry: { "@babel/polyfill": "./src/client/index.js" },
   target: "web",
   output: {
     filename: "[name].js",
@@ -30,7 +30,7 @@ const client = {
 };
 const server = {
   mode: 'none',
-  entry: { server: "./src/server/server.js" },
+  entry: { "@babel/polyfill": "./src/server/server.js" },
   target: "node",
   output: { filename: "[name].js", path: path.resolve(__dirname, "dist") },
   module: moduleObj,

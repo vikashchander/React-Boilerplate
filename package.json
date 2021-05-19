@@ -26,21 +26,24 @@
   },
   "homepage": "https://github.com/vikashchander/mern-boilerplate#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "express": "^4.17.1",
     "raf": "^3.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "rimraf": "^3.0.2"
   },
   "jest": {
-    "setupFilesAfterEnv":["./src/enzyme.setup.js"],
+    "setupFilesAfterEnv": [
+      "./src/enzyme.setup.js"
+    ],
     "setupFiles": [
       "raf/polyfill"
     ],
     "verbose": true
-
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
@@ -51,7 +54,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^26.6.3",
-    "react-test-renderer": "^17.0.2",
+    "react-test-renderer": "^16.14.0",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",
     "webpack-node-externals": "^3.0.0"
