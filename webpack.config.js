@@ -8,31 +8,36 @@ const moduleObj = {
       test: /\.m?js$/,
       exclude: /(node_modules|bower_components)/,
       use: {
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
-          presets: ['@babel/preset-env']
-        }
-      }
-    }
-  ]
+          presets: ["@babel/preset-env"],
+        },
+      },
+    },
+  ],
 };
 
 const client = {
-  mode: 'none',
+  mode: "none",
   entry: { "@babel/polyfill": "./src/client/index.js" },
   target: "web",
   output: {
-    filename: "[name].js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist/public"),
+    clean: true,
   },
   module: moduleObj,
   plugins: [new HtmlWebPackPlugin({ template: "src/client/index.html" })],
 };
 const server = {
-  mode: 'none',
+  mode: "none",
   entry: { "@babel/polyfill": "./src/server/server.js" },
   target: "node",
-  output: { filename: "[name].js", path: path.resolve(__dirname, "dist") },
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
   module: moduleObj,
   externals: [nodeExternals()],
 };
