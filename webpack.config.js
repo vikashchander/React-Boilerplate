@@ -22,7 +22,7 @@ const moduleObj = {
 };
 
 const client = {
-  mode: "none",
+  mode: "production",
   entry: { "@babel/polyfill": "./src/client/index.js" },
   target: "web",
   output: {
@@ -34,7 +34,7 @@ const client = {
   plugins: [new HtmlWebPackPlugin({ template: "src/client/index.html" })],
 };
 const server = {
-  mode: "none",
+  mode: "production",
   entry: { "@babel/polyfill": "./src/server/server.js" },
   target: "node",
   output: {
