@@ -14,6 +14,10 @@ const moduleObj = {
         },
       },
     },
+    {
+      test: /\.css$/i,
+      use: ["to-string-loader", "css-loader"],
+    },
   ],
 };
 
