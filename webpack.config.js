@@ -16,8 +16,13 @@ const moduleObj = {
     },
     {
       test: /\.css$/i,
-      use: ["to-string-loader", "css-loader"],
+      use: ["style-loader","css-loader"],
     },
+    {
+      test: /\.js$/,
+      enforce: "pre",
+      use: ["source-map-loader"],
+    }
   ],
 };
 
@@ -30,6 +35,7 @@ const client = {
     path: path.resolve(__dirname, "dist/public"),
     clean: true,
   },
+  devtool: false,
   module: moduleObj,
   plugins: [new HtmlWebPackPlugin({ template: "src/client/index.html" })],
 };
@@ -42,6 +48,7 @@ const server = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  devtool: 'eval-source-map',
   module: moduleObj,
   externals: [nodeExternals()],
 };
