@@ -1,5 +1,5 @@
 import WebServer from "./web.server";
-let webServer = new WebServer();
+var webServer = new WebServer();
 webServer
   .start()
   .then(() => {

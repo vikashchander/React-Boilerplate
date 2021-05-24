@@ -1,5 +1,5 @@
-import WebServer from './web.server'
-import "babel-polyfill";
+import WebServer from './WebServer'
+ import "@babel/polyfill"
 describe('Started', () => {  let webServer = null
 
   beforeAll(() => {  webServer = new WebServer()  })

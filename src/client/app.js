@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import styles from './app.css';
+// import Styles from 'style-loader!css-loader?modules!./styles.css';
 export default class App extends Component {
   render() {
-    return <div  className={styles.bigblue} >Welcome to React Boilerplate App</div>;
+    return <div >Welcome to React Boilerplate App</div>;
   }
 }
