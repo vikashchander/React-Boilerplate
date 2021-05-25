@@ -3,6 +3,7 @@ const express = require("express");
 const webpackDevServer = require('webpack-dev-server')
 const webpack = require('webpack')
 
+
 const config = require('../../webpack.config')
 const options = {
   contentBase: './dist/public',
