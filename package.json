@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "debug": "nodemon --inspect src/server/server.js",
-    "build": "webpack --watch --config webpack.config.js ",
+    "build": "webpack  --config webpack.config.js ",
     "build-babel": "npm run build-babel-server && npm run build-babel-client",
     "build-babel-server": "babel src/server --out-dir ./dist",
     "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public ",
-    "start": "nodemon ./dist/@babel/polyfill.js",
+    "start": "node ./dist/@babel/polyfill.js",
     "test": "jest ./src"
   },
   "repository": {
@@ -45,12 +45,15 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
@@ -59,6 +62,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-node-externals": "^3.0.0"
   }
 }
