@@ -1,5 +1,6 @@
 let path = require("path");
 let nodeExternals = require("webpack-node-externals");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
@@ -18,9 +19,13 @@ const moduleObj = {
     {
       test: /\.css$/,
       use: [
-        'style-loader',
+        MiniCssExtractPlugin.loader,
         'css-loader'
       ]
+    },
+    {
+      test: /\.svg$/,
+      use: 'file-loader'
     },
     {
       test: /\.js$/,
@@ -45,7 +50,7 @@ const client = {
 },
   devtool: false,
   module: moduleObj,
-  plugins: [new CleanWebpackPlugin(),new HtmlWebPackPlugin({ template: "src/client/index.html" })],
+  plugins: [new CleanWebpackPlugin(),new HtmlWebPackPlugin({ template: "src/client/index.html" }),new MiniCssExtractPlugin()],
 };
 const server = {
   mode: "production",
