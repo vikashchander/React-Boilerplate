@@ -29,12 +29,17 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "express": "^4.17.1",
+    "jest-svg-transformer": "^1.0.0",
     "raf": "^3.4.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "rimraf": "^3.0.2"
   },
   "jest": {
+    "transform": {
+      "^.+\\.(js?)$": "babel-jest",
+      "^.+\\.svg$": "jest-svg-transformer"
+    },
     "setupFilesAfterEnv": [
       "./src/enzyme.setup.js"
     ],
@@ -48,6 +53,7 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",

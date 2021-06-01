@@ -47,10 +47,10 @@ const client = {
   devServer: {
     inline: false,
     contentBase: "./dist",
-},
+  },
   devtool: false,
   module: moduleObj,
-  plugins: [new CleanWebpackPlugin(),new HtmlWebPackPlugin({ template: "src/client/index.html" }),new MiniCssExtractPlugin()],
+  plugins: [new CleanWebpackPlugin(), new HtmlWebPackPlugin({ template: "src/client/index.html" }), new MiniCssExtractPlugin()],
 };
 const server = {
   mode: "production",
@@ -64,7 +64,7 @@ const server = {
   devServer: {
     inline: true,
     contentBase: "./dist/public/",
-},
+  },
   devtool: 'eval-source-map',
   module: moduleObj,
   plugins: [new CleanWebpackPlugin()],
